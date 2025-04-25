@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CloudMoon } from "lucide-react";
 
@@ -12,26 +13,27 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <CloudMoon className="h-8 w-8 text-neonHighlight animate-dream-glow" />
             <span className="font-raleway text-2xl font-bold text-mistyLavender">
               Lucid AI
             </span>
-          </div>
+          </Link>
           <div className="hidden md:flex items-center space-x-8">
-            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple">
-              Home
+            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple" asChild>
+              <Link to="/analyze">Analyze</Link>
             </Button>
-            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple">
-              Journal
+            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple" asChild>
+              <Link to="/visualize">Visualize</Link>
             </Button>
-            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple">
-              About
+            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple" asChild>
+              <Link to="/journal">Journal</Link>
             </Button>
-            <Button 
-              className="bg-etherealPurple hover:bg-neonHighlight text-white transition-all duration-300 shadow-lg hover:shadow-neonHighlight/50"
-            >
-              Start Dreaming
+            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple" asChild>
+              <Link to="/about">About</Link>
+            </Button>
+            <Button variant="ghost" className="text-mistyLavender hover:text-etherealPurple" asChild>
+              <Link to="/contact">Contact</Link>
             </Button>
           </div>
         </div>
